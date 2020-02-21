@@ -44,7 +44,19 @@ chown 用户名 文件名 将该文件的所有者 换成这个用户
 
 chown -R 用户名:用户组 文件目录  将某个目录下的所有文件的 所有者与所有组 都更改为这个用户 
 
-11. 在vim 编辑器下 :set nu 可以显示行号  :num可以显示光标所在的当前行号
+11. 在vim 编辑器下 
+
+    :set nu 可以显示行号  
+
+    :num可以显示光标所在的当前行号
+
+    :shell 可以在不关闭vim的情况下回到 shell 
+
+       此时回到shell 做完工作以后 ctrl + D 或者 exit 可以回到vim
+
+    :wq 写并离开
+
+    :q 离开
 
 
 12. 查看端口号应用情况 
@@ -60,6 +72,15 @@ chown -R 用户名:用户组 文件目录  将某个目录下的所有文件的 
     cd ~ 回到当前用户的根目录 
  
     cd - 回到上次操作的目录 并打印上次操作的目录到控制台 
+
+14 sudo apt-get install XX 安装某个软件
+
+   sudo apt-get remove XX 卸载某个软件 相关配置数据并没有删除
+
+   sudo apt-get purge XX 卸载某个软件 以及相关数据
+
+   sudo apt-get remove --auto-remove XX 卸载某个软件的安装包
+
 
 
 ```
