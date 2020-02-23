@@ -1,0 +1,6 @@
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/CMakeFiles/rebuild_cache.dir
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/CMakeFiles/edit_cache.dir
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/CMakeFiles/main.dir
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/proto/CMakeFiles/edit_cache.dir
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/proto/CMakeFiles/rebuild_cache.dir
+/home/qin/Common/github/GameServer/code/protobuf/C++/build/proto/CMakeFiles/proto.dir

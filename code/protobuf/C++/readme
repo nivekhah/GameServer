@@ -1,0 +1,16 @@
+如果报错：
+
+```
+
+Could NOT find Protobuf (missing:  PROTOBUF_LIBRARY PROTOBUF_INCLUDE_DIR) 
+
+
+```
+
+则加入 将protobuf的包下载好
+
+```
+sudo apt-get install libprotobuf-dev protobuf-compiler
+
+
+```
