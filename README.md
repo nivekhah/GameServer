@@ -60,6 +60,10 @@
 
 [24.go的并发下的带缓冲区的通道缓冲区关闭](./code/Go/test24/24.go)
 
+[25.Beego web框架hello world](./code/Go/beego-demo)
+
+[25.Beego web框架Restful](https://github.com/gwduan/beego-demo.git)
+
 # C++
 
 [1.C++简介](./note/C++/c++简介.md)
@@ -106,6 +110,57 @@
 
 
 
+
+
 ## 相关练习代码在 code/C++文件夹内
+
+
+#Vue 
+
+[1.NPM是什么](./note/C++/关于makefile.md)
+
+[2.VScode相关配置以及使用教程](./note/C++/关于makefile.md)
+
+[3.v-on 与 v-bind](./note/C++/关于makefile.md)
+
+[4.v-show 与 v-if](./note/C++/关于makefile.md)
+
+[5.计算属性 函数 监听器](./note/C++/关于makefile.md)
+
+[6.过滤器](./note/C++/关于makefile.md)
+
+[7.自定义插件](./note/C++/关于makefile.md)
+
+[8.组件化](./note/C++/关于makefile.md)
+
+[9.props 父子组件信息传递](./note/C++/关于makefile.md)
+
+[10.Vue实例生命周期](./note/C++/关于makefile.md)
+
+[11.Vue-routes路由](./note/C++/关于makefile.md)
+
+[12.axios数据请求](./note/C++/关于makefile.md)
+
+[13.webpack打包工具是什么](./note/C++/关于makefile.md)
+
+[14.easymock模拟假数据](./note/C++/关于makefile.md)
+
+[15.vue脚手架](./note/C++/关于makefile.md)
+
+
+# Python 
+
+
+## 关于异步网路框架 Twisted
+
+[1.什么是异步模型 为什么要使用异步模型](./note/python/twisted/1.md)
+
+[2.reactor模型](./note/python/twisted/2.md)
+
+[3.deferred](./note/python/twisted/Deferred.md)
+
+更多笔记见 note python 代码 见 code python
+
+
 
 
