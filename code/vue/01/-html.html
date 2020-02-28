@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 为了防止 XSS 攻击,在此指令上做了安全处理,当发现输出内容有 script 标签时,则不渲染 -->
+    <!-- XSS攻击：将script代码嵌入静态Html文件中 -->
+    <!--     XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。 
+    这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、ActiveX、 Flash 或者甚至是普通的HTML。 -->
+    <div id="app">
+        <h1><span v-html="contentHtml"></span></h1>
+    </div>
+    <script>
+
+        
+        new Vue({
+            el:"#app",
+            data:{
+                contentHtml:'<span style="color:red">红色字体内容 <script>alert("hello vue")<\/script></span>'
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
