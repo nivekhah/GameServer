@@ -8,6 +8,9 @@
 > * Java
 > * Vue
 > * 算法
+> * Linux
+
+
 
 # Go
 
@@ -109,7 +112,7 @@
 [21.关于makefile](./note/C++/关于makefile.md)
 
 
-
+[22.libevent 框架](./note/C++/关于makefile.md)
 
 
 ## 相关练习代码在 code/C++文件夹内
@@ -160,6 +163,191 @@
 [3.deferred](./note/python/twisted/Deferred.md)
 
 更多笔记见 note python 代码 见 code python
+
+
+# Linux 
+
+
+```
+
+# 记录一些使用的比较多的指令
+
+```
+1.解压文件 tar -zxvf XXX.tar  
+
+z: 表示用gzip来压缩或者解压
+
+x: 表示解压
+
+v:表示查看文件名
+
+f：表示文件
+
+
+对于.gz文件 使用 gunzip XX.gz
+
+
+2.查看用户  users
+
+3.查看用户所属用户组： groups
+
+4.查看文件 cat XX文件
+
+5.修改文件或文件夹所属用户/用户组 chown -R 用户名:组名 文件名或目录名
+
+6.修改用户的权限  ---> chmod 与 chown 相区分
+
+(1)chmod 777 文件名 
+
+   4: 读权限 2:写权限 1：执行权限  [owner 权限] [group权限] [other权限]
+
+(2) chmod a+x 文件名 a--> all x -->执行  表示为所有用户在这个文件上添加上 可执行的权限
+
+    chmod o+x 文件名 o-->others 
+7.使用vim来更改文件 vim 文件名
+
+8.查看已安装的软件 dpkg --list 
+
+9.删除某软件 sudo apt-get remove XX软件名 
+
+10.修改文件所有者或者用户组 chown
+
+chown 用户名 文件名 将该文件的所有者 换成这个用户
+
+chown -R 用户名:用户组 文件目录  将某个目录下的所有文件的 所有者与所有组 都更改为这个用户 
+
+11. 在vim 编辑器下 
+
+    :set nu 可以显示行号  
+
+    :num可以显示光标所在的当前行号
+
+    :shell 可以在不关闭vim的情况下回到 shell 
+
+       此时回到shell 做完工作以后 ctrl + D 或者 exit 可以回到vim
+
+    :wq 写并离开
+
+    :q 离开
+
+
+12. 查看端口号应用情况 
+   
+   netstat -a | grep 22   表示打印出 占用端口为22 的所有应用程序 -a  --> all
+ 
+   netstat -al | grep 22  ..... 所有监听应用程序  -a -->all -l  --> listen
+
+13. cd  
+
+    cd .. 回到上级目录 
+
+    cd ~ 回到当前用户的根目录 
+ 
+    cd - 回到上次操作的目录 并打印上次操作的目录到控制台 
+
+14 sudo apt-get install XX 安装某个软件
+
+   sudo apt-get remove XX 卸载某个软件 相关配置数据并没有删除
+
+   sudo apt-get purge XX 卸载某个软件 以及相关数据
+
+   sudo apt-get remove --auto-remove XX 卸载某个软件的安装包
+
+15 软链接  在另一个目录下 共享另一个文件的方法 硬链接用了索引节点 相当于通过文件的别名共享文件
+
+【软链接】（又称符号链接，即 soft link 或 symbolic link）：相当于我们 Windows 中的快捷方式，即如果你软链接一个目录，只是一个目录的快捷方式到指定位置，操作系统找这个快捷方式会直接找到真实目录下的文件。
+
+ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/ 
+
+ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
+
+ln -s /home/qin/Common/Node/node-v12.16.1-linux-x64/bin/webpack    /usr/local/bin/  将webpack 加入到命令环境中 这样就能在linux下使用 webpack命令了
+
+
+[关于软连接与硬连接](https://www.jianshu.com/p/b035d94fa959)
+
+软链接这种文件共享的方式 常常被用到 bin/XX 软件 共享到 /usr/local/bin/ 来完成命令环境的搭建 如上述的 node npm  软连接后就可以 在linux 下使用node 与 npm 的命令了
+
+16 git 设置与取消代理
+
+
+git config --global https.proxy http://127.0.0.1:1080
+
+git config --global https.proxy https://127.0.0.1:1080
+
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy 
+
+
+17. 关于hexo 写文章
+
+hexo init XX 新建XX文件夹 并导入hexo 博客模板
+
+hexo server 开启 server服务
+
+hexo new "XXX"  新建名字为XXX的博文 会新建一个markdown 文件到source 下的_post文件夹下
+
+更多指令 看[这个](https://hexo.io/zh-cn/docs/commands)
+
+
+
+18.who  当前用户有谁
+
+
+19 man + 命令名称  去看不同命令的详细介绍
+
+
+20 telnet 192.168.0.1 8080 
+
+如果是tcp的协议服务 可以用 telent 直接去测试该服务是否正常使用
+
+
+21 关于gcc g++ 
+
+gcc --> c
+
+
+g++ --> cpp 
+
+
+g++ -o 1.o 1.cpp  使用1.cpp生成1.o
+
+g++ 17_1.cpp 17_2.cpp -o 17 同时编译多个文件
+
+
+22.关于NPM
+
+
+sudo npm -g install npm@6.4.1  升级npm自身版本
+
+npm root -g 查看全局库目录地址
+
+/home/qin/Common/Node/node-v12.16.1-linux-x64/lib/node_modules 
+
+
+
+23.关于webpack
+
+Webpack 是一个前端的 静态模块资源打包工具 ,能让浏览器也支持模块化(有些浏览器无法识别es6语法 webpack可以将相关代码打包成ES5 这些浏览器能识别的)
+
+Webpack 核心主要进行 JavaScript 资源打包 它可以结合其他插件工具,将多种静态资源css、png、sass 分类转换成一个个静态文件,这样可以减少页面的请求。
+可集成 babel 工具实现 EcmaScript 6 转 EcmaScript 5 ,解决兼容性问题
+可集成 http 服务器
+可集成模块热加载,当代码改变后自动刷新浏览器 等等功能
+
+webpack ./js/main.js -o ./js/XX.js  之后生成的XX.js 就能被运用到其他不兼容的浏览器里
+
+
+
+
+
+
+```
+
+
+
+```
 
 
 
